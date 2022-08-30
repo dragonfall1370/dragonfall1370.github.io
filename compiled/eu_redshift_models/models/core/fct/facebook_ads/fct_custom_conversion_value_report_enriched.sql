@@ -1,0 +1,8 @@
+
+
+SELECT custom_conversion_report.ad_id, custom_conversion_report.date, custom_conversion_report._fivetran_id, custom_conversion_report.account_id, custom_conversion_report.adset_id, custom_conversion_report.campaign_id, custom_conversion_report.clicks, custom_conversion_report.impressions, custom_conversion_report.inline_link_clicks, custom_conversion_report.reach, custom_conversion_report.frequency, custom_conversion_report.spend, custom_conversion_report.account_name, custom_conversion_report.adset_name, custom_conversion_report.campaign_name, custom_conversion_report."objective", custom_conversion_report._fivetran_synced
+   FROM "airup_eu_dwh"."facebook_ads"."custom_conversion_report"
+  WHERE custom_conversion_report.date > '2022-02-01'::date
+UNION 
+ SELECT custom_conversion_value_report.ad_id, custom_conversion_value_report.date, custom_conversion_value_report._fivetran_id, custom_conversion_value_report.account_id, custom_conversion_value_report.adset_id, custom_conversion_value_report.campaign_id, custom_conversion_value_report.clicks, custom_conversion_value_report.impressions, custom_conversion_value_report.inline_link_clicks, custom_conversion_value_report.reach, custom_conversion_value_report.frequency, custom_conversion_value_report.spend, custom_conversion_value_report.account_name, custom_conversion_value_report.adset_name, custom_conversion_value_report.campaign_name, custom_conversion_value_report."objective", custom_conversion_value_report._fivetran_synced
+   FROM "airup_eu_dwh"."facebook_ads"."custom_conversion_value_report"
